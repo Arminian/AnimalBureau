@@ -273,7 +273,7 @@
         V5ahZBARoM9fiBZINzuBpWkhdsCnChBlt16+/B8HKZX8u3Dh/wNRg/0El5CJXwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="exitBtt.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAACPNJREFUeF7tndtvFVUUxvkD1Df12eCD+B+I2nLzoYIGSwmtJCRcFKMJEEPbFIql
@@ -317,7 +317,4 @@
         fUMf0Vd9T+AmTJgwYcKECRMmTPg5Zsz4Dx/G2/XKEGSfAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
 </root>
