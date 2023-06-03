@@ -39,6 +39,7 @@
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
+            label8 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)exitBtt).BeginInit();
             SuspendLayout();
@@ -148,11 +149,22 @@
             label7.TabIndex = 33;
             label7.Text = "8. to cancel searching for specific species user has to click update button, this will show all entires again";
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Location = new Point(12, 432);
+            label8.Name = "label8";
+            label8.Size = new Size(460, 21);
+            label8.TabIndex = 34;
+            label8.Text = "9. user can sort entries in database by clicking on top columns";
+            // 
             // helpPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1084, 561);
+            Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -185,5 +197,6 @@
         private Label label5;
         private Label label6;
         private Label label7;
+        private Label label8;
     }
 }
