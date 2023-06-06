@@ -1,5 +1,6 @@
 using System.Data;
 using System.Data.SqlClient;
+using System.Reflection;
 
 namespace AnimalBureau
 {
@@ -15,8 +16,7 @@ namespace AnimalBureau
             Application.Exit();
         }
 
-        SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrator\Documents\bureauDB.mdf;Integrated Security=True;Connect Timeout=30");
-
+        SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + System.AppDomain.CurrentDomain.BaseDirectory + "AnimalDB.mdf" + ";Integrated Security=True;Connect Timeout=30");
         private void addButton_Click(object sender, EventArgs e)
         {
             try
@@ -29,10 +29,11 @@ namespace AnimalBureau
             }
             catch
             {
+                MessageBox.Show("Cannot add entry");
             }
         }
 
-        void popul()
+        void pop()
         {
             try
             {
@@ -45,7 +46,7 @@ namespace AnimalBureau
                 userGV.DataSource = dset.Tables[0];
                 connection.Close();
             }
-            catch (Exception tb)
+            catch
             {
                 MessageBox.Show("Error while loading table");
             }
@@ -64,7 +65,7 @@ namespace AnimalBureau
                 userGV.DataSource = dset.Tables[0];
                 connection.Close();
             }
-            catch (Exception sr)
+            catch
             {
                 MessageBox.Show("Error while searching");
             }
@@ -72,12 +73,12 @@ namespace AnimalBureau
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
-            popul();
+            pop();
         }
 
         private void updateButton_Click(object sender, EventArgs e)
         {
-            popul();
+            pop();
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
@@ -108,7 +109,7 @@ namespace AnimalBureau
                 genusBox.Text = userGV.CurrentRow.Cells[1].Value.ToString();
                 speciesBox.Text = userGV.CurrentRow.Cells[0].Value.ToString();
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Error while selecting row");
             }
@@ -141,6 +142,22 @@ namespace AnimalBureau
             aboutPage about = new aboutPage();
             about.Show();
             this.Hide();
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                connection.Open();
+                SqlCommand cmd = new SqlCommand("update UsrTable set genus='" + genusBox.Text + "',family='" + familyBox.Text + "',orders='" + orderBox.Text + "',class='" + classBox.Text + "',phylum='" + phylumBox.Text + "' where species='" + speciesBox.Text + "'", connection);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Entry Updated");
+                connection.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Cannot update entry");
+            }
         }
     }
 }

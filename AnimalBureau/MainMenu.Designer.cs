@@ -48,6 +48,7 @@
             aboutToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1 = new MenuStrip();
             searchButton = new Button();
+            editButton = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)userGV).BeginInit();
@@ -123,7 +124,7 @@
             addButton.BackColor = Color.IndianRed;
             addButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             addButton.ForeColor = SystemColors.Window;
-            addButton.Location = new Point(487, 31);
+            addButton.Location = new Point(373, 31);
             addButton.Name = "addButton";
             addButton.Size = new Size(109, 51);
             addButton.TabIndex = 20;
@@ -135,8 +136,8 @@
             // 
             updateButton.BackColor = Color.IndianRed;
             updateButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            updateButton.ForeColor = SystemColors.WindowFrame;
-            updateButton.Location = new Point(625, 31);
+            updateButton.ForeColor = SystemColors.Window;
+            updateButton.Location = new Point(634, 31);
             updateButton.Name = "updateButton";
             updateButton.Size = new Size(109, 51);
             updateButton.TabIndex = 21;
@@ -149,7 +150,7 @@
             deleteButton.BackColor = Color.IndianRed;
             deleteButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             deleteButton.ForeColor = SystemColors.Window;
-            deleteButton.Location = new Point(763, 31);
+            deleteButton.Location = new Point(767, 31);
             deleteButton.Name = "deleteButton";
             deleteButton.Size = new Size(109, 51);
             deleteButton.TabIndex = 22;
@@ -247,11 +248,25 @@
             searchButton.UseVisualStyleBackColor = false;
             searchButton.Click += searchButton_Click;
             // 
+            // editButton
+            // 
+            editButton.BackColor = Color.IndianRed;
+            editButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            editButton.ForeColor = SystemColors.Window;
+            editButton.Location = new Point(504, 31);
+            editButton.Name = "editButton";
+            editButton.Size = new Size(109, 51);
+            editButton.TabIndex = 31;
+            editButton.Text = "Edit";
+            editButton.UseVisualStyleBackColor = false;
+            editButton.Click += editButton_Click;
+            // 
             // MainMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1100, 600);
+            Controls.Add(editButton);
             Controls.Add(searchButton);
             Controls.Add(userGV);
             Controls.Add(searchBox);
@@ -304,5 +319,6 @@
         private ToolStripMenuItem aboutToolStripMenuItem;
         private MenuStrip menuStrip1;
         private Button searchButton;
+        private Button editButton;
     }
 }
